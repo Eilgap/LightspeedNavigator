@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainMenuButtons : MonoBehaviour
 {
@@ -18,16 +19,16 @@ public class MainMenuButtons : MonoBehaviour
 
     public void PlayButton()
     {
-
+        SceneManager.LoadScene("MainGame");
     }
 
     public void CreditsButton()
     {
-
+        SceneManager.LoadScene("Credits");
     }
 
     public void LeaderboardButton()
     {
-        
+        SceneManager.LoadScene("Leaderboard");
     }
 }

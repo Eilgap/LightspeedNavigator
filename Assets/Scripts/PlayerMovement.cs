@@ -4,6 +4,11 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour
 {   
     public float speed;
+
+    void Start()
+    {
+
+    }
     
     void Update()
     {

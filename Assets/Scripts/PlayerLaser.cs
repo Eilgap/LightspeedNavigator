@@ -1,20 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Scoring;
 
-public class AsteroidMovement : MonoBehaviour
+public class PlayerLaser : MonoBehaviour
 {
     public float speed;
-    public bool stop = false;
+    private Animator anim;
+    public Vector3 d;
+    bool stop = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         float h = 3;
-        Vector3 d = Vector3.zero;
-        d.x -= 1.0f;
+        d = Vector3.zero;
+        d.x += 1.0f;
         transform.Translate(d * speed * Time.deltaTime);
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,29 +23,26 @@ public class AsteroidMovement : MonoBehaviour
     {
         if(stop == false)
         {
-            Vector3 d = Vector3.zero;
-            d.x -= 1.0f;
+            d = Vector3.zero;
+            d.x += 1.0f;
             transform.Translate(d * speed * Time.deltaTime);
         }
         else
         {
-            Vector3 d = Vector3.zero;
-            transform.Translate(d * speed * Time.deltaTime);
+            transform.Translate(d * 0);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         switch(collision.gameObject.tag)
         {
-            case "Player":
-                Destroy(collision.gameObject);
-                //Scoring.Death();
-                break;
             case "Asteroid":
                 break;
-            case "Laser":
-                Destroy(collision.gameObject, .75f);
+            case "Enemy":
+                Destroy(collision.gameObject);
+                anim.SetTrigger("LaserHit");
+                transform.Translate(d * 0);
                 stop = true;
                 break;
             default:
