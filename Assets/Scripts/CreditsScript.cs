@@ -25,7 +25,7 @@ public class CreditsScript : MonoBehaviour
         Vector3 d = Vector3.zero;
         d.y += 1.0f;
         transform.Translate(d * speed * Time.deltaTime);
-        if(transform.position.y >= 2300)
+        if(transform.position.y >= 2500)
         {
             SceneManager.LoadScene("MainMenu");
         }

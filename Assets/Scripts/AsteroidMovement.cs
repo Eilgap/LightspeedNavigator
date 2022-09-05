@@ -30,7 +30,7 @@ public class AsteroidMovement : MonoBehaviour
         switch(collision.gameObject.tag)
         {
             case "Player":
-                Destroy(collision.gameObject, .70f);
+                //Destroy(collision.gameObject, .70f);
                 break;
             case "Asteroid":
                 break;

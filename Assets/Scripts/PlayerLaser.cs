@@ -8,6 +8,7 @@ public class PlayerLaser : MonoBehaviour
     private Animator anim;
     public Vector3 d;
     bool stop = false;
+    public AudioSource boom;
 
     void Start()
     {
@@ -15,6 +16,7 @@ public class PlayerLaser : MonoBehaviour
         d.x += 1.0f;
         transform.Translate(d * speed * Time.deltaTime);
         anim = GetComponent<Animator>();
+        boom = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,6 +36,7 @@ public class PlayerLaser : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        boom.Play();
         switch(collision.gameObject.tag)
         {
             case "Asteroid":

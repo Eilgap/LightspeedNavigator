@@ -34,4 +34,9 @@ public class MainMenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene("Leaderboard");
     }
+
+    public void QuitButton()
+    {
+        Application.Quit();
+    }
 }
