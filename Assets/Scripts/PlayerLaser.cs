@@ -11,7 +11,6 @@ public class PlayerLaser : MonoBehaviour
 
     void Start()
     {
-        float h = 3;
         d = Vector3.zero;
         d.x += 1.0f;
         transform.Translate(d * speed * Time.deltaTime);
@@ -48,5 +47,10 @@ public class PlayerLaser : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }

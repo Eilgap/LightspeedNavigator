@@ -4,10 +4,15 @@ using System.Collections;
 public class PlayerMovement : MonoBehaviour
 {   
     public float speed;
+    private Scoring s;
+    private Animator anim;
+    private bool shotLimit = true;
+    public PlayerLaser pew;
 
     void Start()
     {
-
+        s = FindObjectOfType<Scoring>();
+        anim = GetComponent<Animator>();
     }
     
     void Update()
@@ -33,5 +38,45 @@ public class PlayerMovement : MonoBehaviour
             d.y += 1.0f;
         }
         transform.Translate(d * speed * Time.deltaTime);
+        if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.KeypadEnter) || Input.GetKey(KeyCode.Space))
+        {
+            if(shotLimit)
+            {
+                Shoot();
+            }
+            shotLimit = false;
+        }
+        else
+        {
+            shotLimit = true;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        anim.SetTrigger("PlayerHit");
+        switch(collision.gameObject.tag)
+        {
+            case "Asteroid":
+                s.Death();
+                break;
+            case "Laser":
+                Destroy(collision.gameObject);
+                s.Death();
+                break;
+            case "Enemy":
+                Destroy(collision.gameObject);
+                s.Death();
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void Shoot()
+    {
+        Vector3 pos = gameObject.transform.position;
+        pos.x += 1.7f;
+        Instantiate(pew, pos, Quaternion.identity);
     }
 }

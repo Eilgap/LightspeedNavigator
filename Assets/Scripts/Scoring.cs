@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Scoring : MonoBehaviour
 {
-    public float score;
+    public static float score = 0;
     public int scoreIncTime;
     public Text scoreUI;
-    public int lives;
+    public static int baseLives = 3;
+    public static int lives = baseLives;
+    private float highFive;
     // Start is called before the first frame update
     void Start()
     {
-        score = 0;
+        highFive = PlayerPrefs.GetFloat("hs5", 0);
         scoreIncTime = 0;
     }
 
@@ -30,6 +33,36 @@ public class Scoring : MonoBehaviour
 
     public void Death()
     {
-        lives--;
+        lives = lives - 1;
+        if(lives <= 0)
+        {
+            if(/*score > highFive*/false)
+            {
+                SceneManager.LoadScene("ScoreboardIn");
+            }
+            else
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
+        }
+        else
+        {
+            SceneManager.LoadScene("MainGame");
+        }
+    }
+
+    public void RaiseScore(int temp)
+    {
+        score = score + temp;
+    }
+
+    public void ResetScore()
+    {
+        score = 0;
+    }
+
+    public void ResetLives()
+    {
+        lives = baseLives;
     }
 }
