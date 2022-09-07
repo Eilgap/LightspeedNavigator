@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 913247146544247469}
   - component: {fileID: 913247146544247470}
   - component: {fileID: 913247146544247468}
-  - component: {fileID: 913247146544247443}
   - component: {fileID: 913247146544247442}
+  - component: {fileID: 1981684363198472267}
   m_Layer: 0
   m_Name: Marmsteroid
   m_TagString: Asteroid
@@ -134,19 +134,6 @@ PolygonCollider2D:
       - {x: 0.8867934, y: 1.8912128}
       - {x: 1.0344143, y: 2.9576244}
       - {x: 0.7054548, y: 3.4713228}
---- !u!114 &913247146544247443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 913247146544247471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0b9fa9467a2fe2468fdbe47dcb77c6a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 30
 --- !u!50 &913247146544247442
 Rigidbody2D:
   serializedVersion: 4
@@ -168,3 +155,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1981684363198472267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913247146544247471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01830bfa3fbaf8842a642269b54a1c23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 45

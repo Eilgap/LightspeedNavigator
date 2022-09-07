@@ -11,7 +11,6 @@ public class EnemySpawner : MonoBehaviour
     public int rand;
     public int rand2;
     public float t;
-    public int marmsOdds;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,8 +23,8 @@ public class EnemySpawner : MonoBehaviour
         if(Time.time - t >= 2.5f)
         {
             t = Time.time;
-            rand2 = Random.Range(0, 50);
-            if(rand2 != 49)
+            rand2 = Random.Range(0, 100);
+            if(rand2 != 99)
             {
                 rand = Random.Range(0, 14);
             }

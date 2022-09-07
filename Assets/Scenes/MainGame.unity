@@ -154,8 +154,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bomb: {fileID: 6982816451600483792, guid: f1dcb067836b7604faaa67d7c804c040, type: 3}
   ast: {fileID: 4649872961826988831, guid: 64fc87511ece6c54b8ac77c5dc6a0604, type: 3}
+  marms: {fileID: 913247146544247471, guid: 7eb8c5c4e3e96b943b6e6727587434dc, type: 3}
   rand: 0
+  rand2: 0
   t: 0
+  marmsOdds: 1
 --- !u!4 &53800759
 Transform:
   m_ObjectHideFlags: 0
