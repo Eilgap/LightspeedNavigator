@@ -7,8 +7,11 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject bomb;
     public GameObject ast;
+    public GameObject marms;
     public int rand;
+    public int rand2;
     public float t;
+    public int marmsOdds;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +24,15 @@ public class EnemySpawner : MonoBehaviour
         if(Time.time - t >= 2.5f)
         {
             t = Time.time;
-            rand = Random.Range(0, 14);
+            rand2 = Random.Range(0, 50);
+            if(rand2 != 49)
+            {
+                rand = Random.Range(0, 14);
+            }
+            else
+            {
+                rand = 14;
+            }
             switch(rand)
             {
                 case 0:
@@ -65,6 +76,9 @@ public class EnemySpawner : MonoBehaviour
                     break;
                 case 13:
                     pat13();
+                    break;
+                case 14:
+                    pat14();
                     break;
             }
         }
@@ -250,5 +264,12 @@ public class EnemySpawner : MonoBehaviour
         Instantiate(ast, e1, Quaternion.identity);
         Instantiate(ast, e3, Quaternion.identity);
         Instantiate(ast, e2, Quaternion.identity);
+    }
+
+    void pat14()
+    {
+        Vector3 e1 = Vector3.zero;
+        e1.x = 27;
+        Instantiate(marms, e1, Quaternion.identity);
     }
 }
