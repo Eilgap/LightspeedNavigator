@@ -378,78 +378,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Created by LYRE Studios
-
-
-
-    Lead Game Designer:
-
-
-    Logan Keim
-
-
-
-    Game
-    Producer:
-
-
-    Logan Keim
-
-
-
-    Lead Programmer:
-
-
-    Logan Keim
-
-
-
-    Music
-    Composition:
-
-
-    Logan Keim
-
-
-
-    Voice Acting:
-
-
-    Logan Keim
-
-
-
-    Art
-    Direction:
-
-
-    Logan Keim
-
-
-
-    Special Thanks to:
-
-
-    Everyone''s Dad,
-    Yusuf
-
-    Ray Grant
-
-    Doctor Lord Professor Shawn, Esquire, the Third
-
-    Eternally
-    Confused; Laura O
-
-    Zach
-
-    Rocksnotch
-
-    Gandalf Duck
-
-
-
-    THANKS FOR
-    PLAYING!'
+  m_Text: "Created by LYRE Studios\n\n\nLead Game Designer:\n\nLogan Keim\n\n\nGame
+    Producer:\n\nLogan Keim\n\n\nLead Programmer:\n\nLogan Keim\n\n\nMusic Composition:\n\nLogan
+    Keim\n\n\nVoice Acting:\n\nLogan Keim\n\n\nArt Direction:\n\nLogan Keim\n\n\nSpecial
+    Thanks to:\n\nEveryone's Dad, Yusuf\nRay Grant\nDoctor Lord Professor Shawn,
+    Esquire, the Third\nEternally Confused; Laura O\nZach\nRocksnotch\nMeme Provider,
+    \nDr. Robert Marmelstein\nGandalf Duck\n\n\nTHANKS FOR PLAYING!"
 --- !u!222 &1609890708
 CanvasRenderer:
   m_ObjectHideFlags: 0

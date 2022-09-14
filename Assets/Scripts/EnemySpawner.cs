@@ -24,7 +24,7 @@ public class EnemySpawner : MonoBehaviour
         {
             t = Time.time;
             rand2 = Random.Range(0, 100);
-            if(rand2 != 99)
+            if(rand2 != 49)
             {
                 rand = Random.Range(0, 14);
             }
