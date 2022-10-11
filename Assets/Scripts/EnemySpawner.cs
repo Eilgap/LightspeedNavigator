@@ -23,7 +23,8 @@ public class EnemySpawner : MonoBehaviour
         if(Time.time - t >= 2.5f)
         {
             t = Time.time;
-            rand2 = Random.Range(0, 100);
+            rand2 = Random.Range(0, 50);
+            //rand2 = 49;
             if(rand2 != 49)
             {
                 rand = Random.Range(0, 14);
